@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ignite digital · agency portfolio </title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9fafc;
+      color: #171923;
+      line-height: 1.5;
+    }
+
+    /* smooth scroll & base */
+    html { scroll-behavior: smooth; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2d3a4b;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #2563eb;
+      background: transparent;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #2563eb;
+      cursor: default;
+      transition: 0.15s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(37, 99, 235, 0.04);
+    }
+
+    /* HERO section */
+    .hero {
+      padding: 3rem 0 4rem 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1 1 350px;
+    }
+
+    .hero-badge {
+      background: #e0e7ff;
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 span {
+      color: #2563eb;
+      border-bottom: 4px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #4a5568;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .stat-item p {
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .hero-visual {
+      flex: 1 1 350px;
+      background: linear-gradient(145deg, #dbeafe, #ede9fe);
+      border-radius: 40px;
+      padding: 2rem 2rem 0 2rem;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hero-visual i {
+      font-size: 4.5rem;
+      color: #2563eb;
+      margin-bottom: 0.5rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 60px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    }
+
+    .hero-visual .viz-text {
+      font-weight: 600;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(4px);
+      width: 100%;
+      padding: 1.2rem 0;
+      border-radius: 30px 30px 0 0;
+      color: #0f172a;
+    }
+
+    /* section title */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 60%;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #a855f7);
+      border-radius: 4px;
+      margin-top: 0.3rem;
+    }
+
+    /* portfolio showcase */
+    .showcase {
+      background: white;
+      padding: 4rem 0;
+      border-radius: 60px 60px 0 0;
+      margin-top: 2rem;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .filter-tabs .tab {
+      background: #f1f4f9;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #334155;
+      cursor: default;
+      transition: 0.1s;
+      border: 1px solid transparent;
+    }
+
+    .filter-tabs .tab.active {
+      background: #2563eb;
+      color: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: 0.2s ease-in-out;
+      border: 1px solid #edf2f7;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -12px rgba(37, 99, 235, 0.15);
+      border-color: #b9d3fd;
+    }
+
+    .card-preview {
+      background: #f1f5f9;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e293b;
+      font-size: 3rem;
+      position: relative;
+    }
+
+    .card-preview i {
+      background: white;
+      padding: 1rem;
+      border-radius: 60px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.02);
+    }
+
+    .card-label {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #2563eb;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+    }
+
+    .card-content {
+      padding: 1.8rem 1.5rem 1.8rem 1.5rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content .category {
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      color: #475569;
+      margin-bottom: 1.5rem;
+    }
+
+    .result-badge {
+      display: flex;
+      gap: 1.5rem;
+      border-top: 1px solid #e9eef3;
+      padding-top: 1rem;
+      font-weight: 600;
+    }
+
+    .result-badge span {
+      color: #0f172a;
+    }
+
+    .result-badge i {
+      color: #2563eb;
+      margin-right: 0.25rem;
+    }
+
+    /* services / expertise */
+    .services {
+      padding: 5rem 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-item {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: 30px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      border: 1px solid #f0f4fa;
+      transition: 0.2s;
+    }
+
+    .service-item:hover {
+      background: #f6f9ff;
+      border-color: #b1cbff;
+    }
+
+    .service-icon {
+      background: #e0e7ff;
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #2563eb;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-item h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-item p {
+      color: #4b5565;
+      font-size: 0.95rem;
+    }
+
+    /* testimonials */
+    .testimonials {
+      background: #ffffff;
+      padding: 4rem 0;
+      border-radius: 40px 40px 0 0;
+    }
+
+    .testimonial-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: #f8fafd;
+      flex: 1 1 280px;
+      padding: 2rem;
+      border-radius: 28px;
+      border: 1px solid #eef3f9;
+    }
+
+    .testimonial-card i {
+      color: #2563eb;
+      font-size: 2rem;
+      opacity: 0.4;
+      margin-bottom: 0.8rem;
+    }
+
+    .testimonial-card p {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #1f2a41;
+      margin-bottom: 1.8rem;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      background: #cbd5e1;
+      border-radius: 100px;
+      background: linear-gradient(145deg, #2563eb, #7c3aed);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .client-info h5 {
+      font-weight: 700;
+    }
+    .client-info span {
+      font-size: 0.9rem;
+      color: #5f6c80;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 5rem 0;
+    }
+
+    .cta-card {
+      background: linear-gradient(125deg, #1e293b, #0f1829);
+      color: white;
+      border-radius: 50px;
+      padding: 4rem 2rem;
+    }
+
+    .cta-card h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-button {
+      background: #2563eb;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      cursor: default;
+      border: 1px solid #4f83f0;
+      box-shadow: 0 8px 18px rgba(0, 50, 150, 0.3);
+      display: inline-block;
+    }
+
+    /* footer */
+    .footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid #e2e8f0;
+      color: #4b5565;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .social i {
+      font-size: 1.4rem;
+      margin-left: 1rem;
+      color: #4b5565;
+      transition: color 0.2s;
+    }
+    .social i:hover { color: #2563eb; cursor: default; }
+
+    /* responsiveness */
+    @media (max-width: 700px) {
+      .navbar { flex-direction: column; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
+      .hero-content h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      ignite<span>·digital</span>
+    </div>
+    <div class="nav-links">
+      <a href="#">home</a>
+      <a href="#">work</a>
+      <a href="#">services</a>
+      <a href="#">insights</a>
+      <a href="#">contact</a>
+    </div>
+    <div class="btn-outline">
+      <i class="fas fa-chart-line" style="margin-right: 0.4rem;"></i> studio@ignite
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fas fa-bolt" style="margin-right: 0.4rem;"></i> growth partners since 2019</span>
+        <h1>digital <span>firepower</span> for modern brands</h1>
+        <p class="hero-desc">We engineer data-driven campaigns that turn clicks into customers. Performance marketing · SEO · creative studio.</p>
+        <div class="hero-stats">
+          <div class="stat-item"><h3>180+</h3><p>campaigns</p></div>
+          <div class="stat-item"><h3>9x</h3><p>avg. ROAS</p></div>
+          <div class="stat-item"><h3>24</h3><p>experts</p></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <i class="fas fa-chart-pie"></i>
+        <div class="viz-text">
+          <strong>📈 +246%</strong> organic traffic (yoy)
+        </div>
+        <i class="fas fa-arrow-trend-up" style="font-size: 2.5rem; background: none; box-shadow: none; color: #2563eb;"></i>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- portfolio showcase -->
+<section class="showcase">
+  <div class="container">
+    <h2 class="section-title">selected work</h2>
+    <div class="filter-tabs">
+      <span class="tab active">all</span>
+      <span class="tab">paid media</span>
+      <span class="tab">SEO</span>
+      <span class="tab">social</span>
+      <span class="tab">web3</span>
+    </div>
+
+    <div class="portfolio-grid">
+      <!-- card 1 -->
+      <div class="portfolio-card">
+        <div class="card-preview">
+          <i class="fas fa-bag-shopping"></i>
+          <span class="card-label">e‑com</span>
+        </div>
+        <div class="card-content">
+          <div class="category">PAID SOCIAL</div>
+          <h3>Urban Monkey</h3>
+          <p>Streetwear brand scaled via tiktok & meta ads.</p>
+          <div class="result-badge">
+            <span><i class="fas fa-dollar-sign"></i> 4.2x ROAS</span>
+            <span><i class="fas fa-users"></i> +158k reach</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="portfolio-card">
+        <div class="card-preview">
+          <i class="fas fa-leaf"></i>
+          <span class="card-label">saas</span>
+        </div>
+        <div class="card-content">
+          <div class="category">SEO + CONTENT</div>
+          <h3>Verdant CRM</h3>
+          <p>Organic traffic increased 3x in 6 months with topic clusters.</p>
+          <div class="result-badge">
+            <span><i class="fas fa-chart-line"></i> 183k sessions</span>
+            <span><i class="fas fa-ranking-star"></i> #1 for 12 keywords</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="portfolio-card">
+        <div class="card-preview">
+          <i class="fas fa-cubes"></i>
+          <span class="card-label">web3</span>
+        </div>
+        <div class="card-content">
+          <div class="category">INFLUENCER + COMMUNITY</div>
+          <h3>Nexus DAO</h3>
+          <p>NFT mint sellout in 38 minutes. community-led growth.</p>
+          <div class="result-badge">
+            <span><i class="fas fa-fire"></i> 9.2k members</span>
+            <span><i class="fas fa-rocket"></i> 340 ETH volume</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 4 -->
+      <div class="portfolio-card">
+        <div class="card-preview">
+          <i class="fas fa-utensils"></i>
+          <span class="card-label">local</span>
+        </div>
+        <div class="card-content">
+          <div class="category">LOCAL SEO + MAPS</div>
+          <h3>Brew & Toast</h3>
+          <p>3 new locations, 400% foot traffic uplift via google local.</p>
+          <div class="result-badge">
+            <span><i class="fas fa-location-dot"></i> rank #1 in area</span>
+            <span><i class="fas fa-star"></i> 4.9 stars (1.2k reviews)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 5 -->
+      <div class="portfolio-card">
+        <div class="card-preview">
+          <i class="fas fa-gem"></i>
+          <span class="card-label">luxury</span>
+        </div>
+        <div class="card-content">
+          <div class="category">INFLUENCER MARKETING</div>
+          <h3>Lumina Jewels</h3>
+          <p>micro‑influencer campaign generated 2.3m impressions.</p>
+          <div class="result-badge">
+            <span><i class="fas fa-heart"></i> 14.5% engagement</span>
+            <span><i class="fas fa-cart-shopping"></i> +192% sales</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 6 -->
+      <div class="portfolio-card">
+        <div class="card-preview">
+          <i class="fas fa-dumbbell"></i>
+          <span class="card-label">fitness</span>
+        </div>
+        <div class="card-content">
+          <div class="category">PERFORMANCE MAX</div>
+          <h3>Pulse fitness app</h3>
+          <p>app installs increased 2x with video assets & smart bidding.</p>
+          <div class="result-badge">
+            <span><i class="fas fa-download"></i> 27k installs</span>
+            <span><i class="fas fa-clock"></i> CPI -32%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- services (expertise) -->
+<div class="container">
+  <section class="services">
+    <h2 class="section-title">core capabilities</h2>
+    <div class="service-grid">
+      <div class="service-item">
+        <div class="service-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+        <h4>SEO & visibility</h4>
+        <p>Technical audits, content strategy & authority building.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+        <h4>paid media</h4>
+        <p>Google, Meta, TikTok & programmatic — full funnel.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon"><i class="fas fa-message"></i></div>
+        <h4>social & influence</h4>
+        <p>Organic growth, creator partnerships & viral campaigns.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+        <h4>creative studio</h4>
+        <p>Video, motion & copy that converts.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">kind words</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <i class="fas fa-quote-right"></i>
+        <p>They don’t just manage bids — they truly understand our customer. Sales doubled within a quarter.</p>
+        <div class="client">
+          <div class="client-avatar">MC</div>
+          <div class="client-info"><h5>M. Chen</h5><span>CMO, Urban Monkey</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <i class="fas fa-quote-right"></i>
+        <p>The SEO roadmap they delivered was gold. We dominate SERPs in our niche now.</p>
+        <div class="client">
+          <div class="client-avatar">JD</div>
+          <div class="client-info"><h5>J. De Jong</h5><span>founder, Verdant</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <i class="fas fa-quote-right"></i>
+        <p>Our most data-savvy partner. Always transparent, always overdelivering.</p>
+        <div class="client">
+          <div class="client-avatar">SR</div>
+          <div class="client-info"><h5>S. Rivera</h5><span>head of growth, Nexus DAO</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- call to action -->
+<div class="container">
+  <section class="cta-section">
+    <div class="cta-card">
+      <h2>ready to ignite your growth?</h2>
+      <p style="font-size: 1.2rem; opacity: 0.8;">Let's craft a data-driven roadmap for your brand.</p>
+      <div class="cta-button"><i class="fas fa-calendar-check" style="margin-right: 0.6rem;"></i> book a free audit</div>
+      <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.7;">no commitment · custom strategy</p>
+    </div>
+  </section>
+</div>
+
+<!-- footer -->
+<div class="container">
+  <footer class="footer">
+    <span>© 2025 ignite·digital — NYC / LA / remote</span>
+    <div class="social">
+      <i class="fab fa-linkedin-in"></i>
+      <i class="fab fa-x-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-dribbble"></i>
+    </div>
+  </footer>
+</div>
+
+<!-- subtle extra: dummy script to make icons feel alive (no real function) -->
+</body>
+</html>
